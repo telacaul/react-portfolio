@@ -1,44 +1,65 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import './App.css';
+import Header from './components/Header';
 import Nav from './components/Nav';
+import Footer from './components/Footer';
 import About from './components/About';
-import Gallery from './components/Gallery';
-import ContactForm from './components/Contact';
+import Contact from './components/Contact';
+
 
 function App() {
+
+  const [aboutSelected, setAboutSelected] = useState(false);
+
   const [categories] = useState([
     {
-      name: 'commercial',
-      description: 'Photos of grocery stores, food trucks, and other commercial projects',
+      name: 'contact'
     },
-    { name: 'portraits', description: 'Portraits of people in my life' },
-    { name: 'food', description: 'Delicious delicacies' },
-    { name: 'landscape', description: 'Fields, farmhouses, waterfalls, and the beauty of nature' },
+    {
+      name: 'projects'
+    },
+    {
+      name: 'resume'
+    }
   ]);
 
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
 
-  const [contactSelected, setContactSelected] = useState(false);
-
   return (
-    <div>
-      <Nav
-        categories={categories}
-        setCurrentCategory={setCurrentCategory}
-        currentCategory={currentCategory}
-        contactSelected={contactSelected}
-        setContactSelected={setContactSelected}
-      ></Nav>
-      <main>
-        {!contactSelected ? (
-          <>
-            <Gallery currentCategory={currentCategory}></Gallery>
-            <About></About>
-          </>
-        ) : (
-            <ContactForm></ContactForm>
-          )}
-      </main>
-    </div>
+    <Router>
+      <div className="d-flex h-100  text-white bg-dark">
+        <div className="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+          <Header>
+            <Nav
+              // category 
+              categories={categories}
+              setCurrentCategory={setCurrentCategory}
+              currentCategory={currentCategory}
+
+              // about
+              aboutSelected={aboutSelected}
+              setAboutSelected={setAboutSelected}
+            ></Nav>
+          </Header>
+          <hr></hr>
+          <main>
+            {!aboutSelected ? (
+              <>
+                <div className="container">
+                  
+                  <Page currentCategory={currentCategory}></Page>
+                </div>
+              </>
+            ) : (
+              <About></About>
+            )}
+          </main>
+          <hr></hr>
+          <Footer />
+        </div>
+      </div>
+    </Router>
   );
 }
 
