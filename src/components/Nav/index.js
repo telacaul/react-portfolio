@@ -1,57 +1,49 @@
 import React, { useEffect } from 'react';
 import { capitalizeFirstLetter } from '../../utils/helpers';
+import { Link } from 'react-router-dom';
+
 
 function Nav(props) {
   const {
-    categories = [],
-    setCurrentCategory,
-    contactSelected,
-    currentCategory,
-    setContactSelected,
+      // categories
+      categories = [],
+      setCurrentCategory,
+      currentCategory,
+      //about
+      aboutSelected,
+      setAboutSelected
   } = props;
 
   useEffect(() => {
-    document.title = capitalizeFirstLetter(currentCategory.name);
+      document.title = capitalizeFirstLetter(currentCategory.name);
   }, [currentCategory]);
 
+
   return (
-    <header className="flex-row px-1">
-      <h2>
-        <a data-testid="link" href="/">
-          <span role="img" aria-label="camera"> 📸</span> Oh Snap!
-        </a>
-      </h2>
-      <nav>
-        <ul className="flex-row">
-          <li className="mx-2">
-            <a data-testid="about" href="#about" onClick={() => setContactSelected(false)}>
-              About me
-            </a>
-          </li>
-          <li className={`mx-2 ${contactSelected && 'navActive'}`}>
-            <span onClick={() => setContactSelected(true)}>Contact</span>
-          </li>
+    <div>
+      <Link to="/">
+          <h3 className="float-md-start mb-0" id="full-name" >Richard Brian Santos</h3>
+      </Link>
+            
+      <nav className="nav nav-masthead justify-content-center float-md-end">
+          <a className="nav-link active" aria-current="page" href="#about" onClick={() => setAboutSelected(true)}>
+              About Me
+          </a>
           {categories.map((category) => (
-            <li
-              className={`mx-1 ${
-                currentCategory.name === category.name && !contactSelected && 'navActive'
-                }`}
-              key={category.name}
-            >
-              <span
-                onClick={() => {
-                  setCurrentCategory(category);
-                  setContactSelected(false);
-                }}
-              >
-                {capitalizeFirstLetter(category.name)}
-              </span>
-            </li>
+              <a className={`nav-link ${currentCategory.name === category.name && !aboutSelected && 'navActive'}`} key={category.name} href={category.name}>
+                  <span onClick={(e) => {
+                      e.preventDefault()
+                      setCurrentCategory(category.name);
+                  console.log(category);
+                  setAboutSelected(false)}}>
+                      {capitalizeFirstLetter(category.name)}
+                  </span>
+              </a>
           ))}
-        </ul>
       </nav>
-    </header>
-  );
+    </div>
+  )
 }
+
 
 export default Nav;
