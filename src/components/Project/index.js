@@ -44,11 +44,6 @@ function Project() {
             <section class="columns">
                 <div class="row justify-content-center">
                     <div class="column col-6">
-                        <a href="https://github.com/telacaul/weather_dashboard">
-                            <img src="./assets/img/weather.jpg" class="img-fluid rounded" alt="WeatherDashboard"></img>
-                        </a>
-                    </div>
-                    <div class="column col-6">
                         <a href="https://github.com/telacaul/js_password_generator">
                             <img src="./assets/img/password.jpg" class="img-fluid rounded" alt="PasswordGenerator"></img>
                         </a>
