@@ -22,7 +22,7 @@ function Nav(props) {
   return (
     <div>
       <Link to="/">
-          <h3 className="float-md-start mb-0" id="full-name" >Richard Brian Santos</h3>
+          <h3 className="float-md-start mb-0" id="full-name" >Tela A. Caul</h3>
       </Link>
             
       <nav className="nav nav-masthead justify-content-center float-md-end">

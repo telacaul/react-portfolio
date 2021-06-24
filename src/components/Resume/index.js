@@ -31,7 +31,7 @@ function Resume() {
                 </ul>
             </div>
             <div className="text-center">
-                <a href= 'https://docs.google.com/document/d/1xK4G3J8B4-HrIeyczAhZbkx8PDzkOFNDFW0JqE0Wzx8/edit?usp=sharing'>
+                <a href= {resumeImg}>
                     <h5>Click here to view my full resume!</h5>
                 </a>
             </div>
