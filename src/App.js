@@ -28,8 +28,8 @@ function App() {
 
   return (
     <Router>
-      <div className="d-flex h-100  text-white bg-dark">
-        <div className="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <div class="container" className="d-flex h-100  text-white bg-dark">
+        <div class="container" className="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
           <Header>
             <Nav
               // category 
@@ -46,7 +46,7 @@ function App() {
           <main>
             {!aboutSelected ? (
               <>
-                <div className="container">
+                <div class="container" className="container">
                   
                   <Page currentCategory={currentCategory}></Page>
                 </div>

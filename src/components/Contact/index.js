@@ -49,13 +49,13 @@ function ContactForm() {
                 className="form-control" 
                 id="exampleInputEmail1" 
                 aria-describedby="emailHelp" 
-                placeholder="Enter email">
+                placeholder="Enter full name">
                 </input>
             </div>
             <br />
             <div className="form-group">
                 <label htmlFor="email">Email</label>
-                <input type="email" name="email" defaultValue={email} onBlur={handleChange} className="form-control" id="exampleInputPassword1" placeholder="Password"></input>
+                <input class="input" type="text" placeholdertype="email" name="email" defaultValue={email} onBlur={handleChange} className="form-control" id="exampleInputPassword1" placeholder="Enter email"></input>
             </div>
             <br />
             <div class="form-group">
@@ -68,7 +68,7 @@ function ContactForm() {
                       <p className="error-text">{errorMessage}</p>
                   </div>
             )}
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <button class = "button is-primary" type="submit" className="btn btn-primary">Submit</button>
         </form>
     );
 }
