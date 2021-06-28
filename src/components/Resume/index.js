@@ -4,7 +4,7 @@ import resumeImg from '../../assets/img/resume.pdf'
 function Resume() {
     return (
         <>
-            <h2 className="text-center" id="resume">Resume</h2>
+            <h2 className="text-center" id="resume">Web Development Resume</h2>
             <br />
             <div>
                 <h3 className="resume-font">Front-end Proficiencies</h3>
