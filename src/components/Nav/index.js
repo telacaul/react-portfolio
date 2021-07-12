@@ -21,7 +21,7 @@ function Nav(props) {
 
   return (
     <div>
-      <Link to="/">
+      <Link href="/">
           <h3 className="float-md-start mb-0" id="full-name" >Tela A. Caul</h3>
       </Link>
             

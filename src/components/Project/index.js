@@ -6,8 +6,8 @@ function Project() {
         <>
             <h2 className="justify-content-center text-center" id="projects">Projects</h2>
             <section class="col-12">
-                <a href="https://salty-thicket-97397.herokuapp.com/">
-                    <img src="./assets/img/brewmap.jpg" class="img-fluid rounded" alt="BrewMaps"></img>
+                <a href="https://brewmap3.herokuapp.com/">
+                    <img src="./assets/img/brewhome.jpg" class="img-fluid rounded" alt="BrewMaps"></img>
                 </a>
             </section>
             <br />
@@ -29,7 +29,7 @@ function Project() {
             <section class="columns">
                 <div class="row justify-content-center">
                     <div class="column col-6">
-                        <a href="https://github.com/telacaul/weather_dashboard">
+                        <a href="https://telacaul.github.io/weather_dashboard/">
                             <img src="./assets/img/weather.jpg" class="img-fluid rounded" alt="WeatherDashboard"></img>
                         </a>
                     </div>
